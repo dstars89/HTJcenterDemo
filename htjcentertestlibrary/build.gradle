@@ -27,8 +27,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.1'
 }
 
-def siteUrl = 'https://github.com/saymagic/AndroidUtils'      // 项目的主页
-def gitUrl = 'https://github.com/saymagic/AndroidUtils.git'   // Git仓库的url
+def siteUrl = 'https://github.com/scu0843041105/HTJcenterDemo'      // 项目的主页
+def gitUrl = 'https://github.com/scu0843041105/HTJcenterDemo.git'   // Git仓库的url
 group = "com.example.stone.htjcentertestlibrary" // Maven Group ID for the artifact，一般填你唯一的包名
 install {
     repositories.mavenInstaller {
@@ -37,7 +37,7 @@ install {
             project {
                 packaging 'aar'
                 // Add your description here
-                name 'Android Commonly used utils'  //项目描述
+                name 'Android Library upload to jcenter'  //项目描述
                 url siteUrl
                 // Set your license
                 licenses {
@@ -48,9 +48,9 @@ install {
                 }
                 developers {
                     developer {
-                        id 'saymagic'       //填写开发者基本信息
-                        name 'saymagic'
-                        email 'cymmagic@gmail.com'
+                        id 'stone'       //填写开发者基本信息
+                        name 'stone'
+                        email 'stone@gmail.com'
                     }
                 }
                 scm {
@@ -86,7 +86,7 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "maven"  //发布到Bintray的那个仓库里，默认账户有四个库，我们这里上传到maven库
-        name = "utils"  //发布到Bintray上的项目名字
+        name = "HTJcenterDemo"  //发布到Bintray上的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
