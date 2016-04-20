@@ -1,8 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
-// 这个version是区分library版本的，因此当我们需要更新library时记得修改这个version
-version = "1.0.0"
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -29,12 +28,16 @@ dependencies {
 
 def siteUrl = 'https://github.com/scu0843041105/HTJcenterDemo'      // 项目的主页
 def gitUrl = 'https://github.com/scu0843041105/HTJcenterDemo.git'   // Git仓库的url
-group = "com.example.stone.htjcentertestlibrary" // Maven Group ID for the artifact，一般填你唯一的包名
+
+// 这个version是区分library版本的，因此当我们需要更新library时记得修改这个version
+version = "0.1.0"  //pom version ,默认是project.version
+group = "com.netease.hearttouch" // Maven Group ID for the artifact，一般填你唯一的包名,默认 project.group
+archivesBaseName='ht-refreshrecyclerview' // artifactId
+
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
-        pom {
-            project {
+        pom.project {
                 packaging 'aar'
                 // Add your description here
                 name 'Android Library upload to jcenter'  //项目描述
@@ -59,7 +62,7 @@ install {
                     url siteUrl
                 }
             }
-        }
+
     }
 }
 task sourcesJar(type: Jar) {
